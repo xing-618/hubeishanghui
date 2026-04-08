@@ -1,0 +1,41 @@
+{
+  "name": "users",
+  "title": "用户",
+  "schemas": [
+    {
+      "name": "userId",
+      "title": "用户ID",
+      "type": "String"
+    },
+    {
+      "name": "name",
+      "title": "姓名",
+      "type": "String"
+    },
+    {
+      "name": "nickName",
+      "title": "昵称",
+      "type": "String"
+    },
+    {
+      "name": "avatarUrl",
+      "title": "头像URL",
+      "type": "Image"
+    },
+    {
+      "name": "phone",
+      "title": "手机号码",
+      "type": "String"
+    },
+    {
+      "name": "isMember",
+      "title": "是否为会员企业",
+      "type": "Boolean"
+    },
+    {
+      "name": "isAdmin",
+      "title": "是否为管理员",
+      "type": "Boolean"
+    }
+  ]
+}

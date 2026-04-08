@@ -1,0 +1,18 @@
+{
+  "records": [
+    {
+      "_id": "favorite_001",
+      "favoriteId": "favorite_001",
+      "userId": "user_002",
+      "companyId": "company_001",
+      "createdAt": 1704240000000
+    },
+    {
+      "_id": "favorite_002",
+      "favoriteId": "favorite_002",
+      "userId": "user_002",
+      "companyId": "company_002",
+      "createdAt": 1704326400000
+    }
+  ]
+}

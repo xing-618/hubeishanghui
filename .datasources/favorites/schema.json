@@ -1,0 +1,21 @@
+{
+  "name": "favorites",
+  "title": "收藏",
+  "schemas": [
+    {
+      "name": "favoriteId",
+      "title": "收藏ID",
+      "type": "String"
+    },
+    {
+      "name": "userId",
+      "title": "用户ID",
+      "type": "String"
+    },
+    {
+      "name": "companyId",
+      "title": "企业ID",
+      "type": "String"
+    }
+  ]
+}

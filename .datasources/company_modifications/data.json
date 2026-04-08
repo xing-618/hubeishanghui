@@ -1,0 +1,15 @@
+{
+  "records": [
+    {
+      "_id": "modification_001",
+      "modificationId": "modification_001",
+      "userId": "user_001",
+      "companyId": "company_001",
+      "newIntroduction": "<p>辉煌建材有限公司成立于2010年，是一家专业从事高品质建材销售的知名企业。公司主要产品包括瓷砖、地板、涂料、卫浴等，为客户提供一站式建材采购服务。</p><p>我们拥有10年的行业经验，服务客户超过5000家，产品质量和服务口碑在行业内名列前茅。</p><p>2024年新增智能建材产品线，为客户提供更智能化的建材解决方案。</p>",
+      "status": "待审核",
+      "rejectReason": "",
+      "createdAt": 1704499200000,
+      "updatedAt": 1704499200000
+    }
+  ]
+}

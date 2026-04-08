@@ -1,0 +1,49 @@
+{
+  "records": [
+    {
+      "_id": "company_001",
+      "companyId": "company_001",
+      "logo": "https://images.unsplash.com/photo-1497215827241-093531dd8847?w=200",
+      "name": "辉煌建材有限公司",
+      "category": "建材",
+      "introduction": "<p>辉煌建材有限公司成立于2010年，是一家专业从事高品质建材销售的知名企业。公司主要产品包括瓷砖、地板、涂料、卫浴等，为客户提供一站式建材采购服务。</p><p>我们拥有10年的行业经验，服务客户超过5000家，产品质量和服务口碑在行业内名列前茅。</p>",
+      "oneLineDesc": "专业建材供应商，品质保证，服务至上",
+      "ownerId": "user_001",
+      "status": "已发布",
+      "isPublished": true,
+      "isRecommended": true,
+      "createdAt": 1704067200000,
+      "updatedAt": 1704067200000
+    },
+    {
+      "_id": "company_002",
+      "companyId": "company_002",
+      "logo": "https://images.unsplash.com/photo-1581093458764-4c6592199bb0?w=200",
+      "name": "精工装修装饰公司",
+      "category": "装修",
+      "introduction": "<p>精工装修装饰公司是一家拥有15年经验的装修设计公司，提供室内设计、装修施工、材料配送等全方位服务。</p><p>我们的设计团队由业内顶尖设计师组成，已成功完成2000+装修项目，获得客户的一致好评。</p>",
+      "oneLineDesc": "15年装修经验，设计施工一体化服务",
+      "ownerId": "user_001",
+      "status": "已发布",
+      "isPublished": true,
+      "isRecommended": true,
+      "createdAt": 1704067200000,
+      "updatedAt": 1704067200000
+    },
+    {
+      "_id": "company_003",
+      "companyId": "company_003",
+      "logo": "https://images.unsplash.com/photo-1559526323-4b5b0e0e0c9a?w=200",
+      "name": "高端烟酒专营店",
+      "category": "烟行",
+      "introduction": "<p>高端烟酒专营店成立于2015年，专注于提供高品质烟酒产品，包括国内外知名品牌香烟和各类名酒。</p><p>我们的产品全部经过严格的质量检验，确保正品保障，为客户提供安全可靠的购物体验。</p>",
+      "oneLineDesc": "正品烟酒，品质保证，值得信赖",
+      "ownerId": "user_001",
+      "status": "已发布",
+      "isPublished": true,
+      "isRecommended": false,
+      "createdAt": 1704067200000,
+      "updatedAt": 1704067200000
+    }
+  ]
+}

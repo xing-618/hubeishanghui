@@ -1,0 +1,40 @@
+{
+  "records": [
+    {
+      "_id": "user_001",
+      "userId": "user_001",
+      "name": "张三",
+      "nickName": "张老板",
+      "avatarUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200",
+      "phone": "13800138000",
+      "isMember": true,
+      "isAdmin": false,
+      "createdAt": 1704067200000,
+      "updatedAt": 1704067200000
+    },
+    {
+      "_id": "user_002",
+      "userId": "user_002",
+      "name": "李四",
+      "nickName": "李经理",
+      "avatarUrl": "https://images.unsplash.com/photo-1517841905152-363d4f9759f5?w=200",
+      "phone": "13900139000",
+      "isMember": false,
+      "isAdmin": false,
+      "createdAt": 1704153600000,
+      "updatedAt": 1704153600000
+    },
+    {
+      "_id": "admin_001",
+      "userId": "admin_001",
+      "name": "管理员",
+      "nickName": "商会管理",
+      "avatarUrl": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200",
+      "phone": "15000150000",
+      "isMember": true,
+      "isAdmin": true,
+      "createdAt": 1704067200000,
+      "updatedAt": 1704067200000
+    }
+  ]
+}

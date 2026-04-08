@@ -1,0 +1,36 @@
+{
+  "name": "banners",
+  "title": "轮播图",
+  "schemas": [
+    {
+      "name": "bannerId",
+      "title": "轮播图ID",
+      "type": "String"
+    },
+    {
+      "name": "image",
+      "title": "图片",
+      "type": "Image"
+    },
+    {
+      "name": "title",
+      "title": "标题",
+      "type": "String"
+    },
+    {
+      "name": "description",
+      "title": "描述",
+      "type": "String"
+    },
+    {
+      "name": "targetPageId",
+      "title": "跳转页面ID",
+      "type": "String"
+    },
+    {
+      "name": "order",
+      "title": "排序",
+      "type": "Number"
+    }
+  ]
+}

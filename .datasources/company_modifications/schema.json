@@ -1,0 +1,36 @@
+{
+  "name": "company_modifications",
+  "title": "企业修改申请",
+  "schemas": [
+    {
+      "name": "modificationId",
+      "title": "修改ID",
+      "type": "String"
+    },
+    {
+      "name": "userId",
+      "title": "用户ID",
+      "type": "String"
+    },
+    {
+      "name": "companyId",
+      "title": "企业ID",
+      "type": "String"
+    },
+    {
+      "name": "newIntroduction",
+      "title": "新的企业介绍",
+      "type": "RichText"
+    },
+    {
+      "name": "status",
+      "title": "审核状态",
+      "type": "String"
+    },
+    {
+      "name": "rejectReason",
+      "title": "拒绝原因",
+      "type": "MultiLineString"
+    }
+  ]
+}

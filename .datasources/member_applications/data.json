@@ -1,0 +1,16 @@
+{
+  "records": [
+    {
+      "_id": "application_001",
+      "applicationId": "application_001",
+      "userId": "user_002",
+      "certificate": "https://example.com/certificate.pdf",
+      "logo": "https://images.unsplash.com/photo-1559526323-4b5b0e0e0c9a?w=200",
+      "companyName": "星光企业",
+      "status": "待审核",
+      "rejectReason": "",
+      "createdAt": 1704412800000,
+      "updatedAt": 1704412800000
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "name": "companies",
+  "title": "企业",
+  "schemas": [
+    {
+      "name": "companyId",
+      "title": "企业ID",
+      "type": "String"
+    },
+    {
+      "name": "logo",
+      "title": "企业logo",
+      "type": "Image"
+    },
+    {
+      "name": "name",
+      "title": "企业名称",
+      "type": "String"
+    },
+    {
+      "name": "category",
+      "title": "企业分类",
+      "type": "String"
+    },
+    {
+      "name": "introduction",
+      "title": "企业介绍",
+      "type": "RichText"
+    },
+    {
+      "name": "oneLineDesc",
+      "title": "一句话介绍",
+      "type": "String"
+    },
+    {
+      "name": "ownerId",
+      "title": "所属用户ID",
+      "type": "String"
+    },
+    {
+      "name": "status",
+      "title": "状态",
+      "type": "String"
+    },
+    {
+      "name": "isPublished",
+      "title": "是否已发布",
+      "type": "Boolean"
+    },
+    {
+      "name": "isRecommended",
+      "title": "是否推荐",
+      "type": "Boolean"
+    }
+  ]
+}

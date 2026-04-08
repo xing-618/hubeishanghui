@@ -1,0 +1,41 @@
+{
+  "name": "member_applications",
+  "title": "会员认证申请",
+  "schemas": [
+    {
+      "name": "applicationId",
+      "title": "申请ID",
+      "type": "String"
+    },
+    {
+      "name": "userId",
+      "title": "用户ID",
+      "type": "String"
+    },
+    {
+      "name": "certificate",
+      "title": "证明材料URL",
+      "type": "File"
+    },
+    {
+      "name": "logo",
+      "title": "企业logo",
+      "type": "Image"
+    },
+    {
+      "name": "companyName",
+      "title": "企业名称",
+      "type": "String"
+    },
+    {
+      "name": "status",
+      "title": "审核状态",
+      "type": "String"
+    },
+    {
+      "name": "rejectReason",
+      "title": "拒绝原因",
+      "type": "MultiLineString"
+    }
+  ]
+}
