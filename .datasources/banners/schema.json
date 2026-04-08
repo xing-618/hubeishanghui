@@ -3,11 +3,6 @@
   "title": "轮播图",
   "schemas": [
     {
-      "name": "bannerId",
-      "title": "轮播图ID",
-      "type": "String"
-    },
-    {
       "name": "image",
       "title": "图片",
       "type": "Image"
@@ -23,14 +18,19 @@
       "type": "String"
     },
     {
-      "name": "targetPageId",
-      "title": "跳转页面ID",
-      "type": "String"
+      "name": "link",
+      "title": "跳转链接",
+      "type": "Url"
     },
     {
       "name": "order",
       "title": "排序",
       "type": "Number"
+    },
+    {
+      "name": "status",
+      "title": "状态",
+      "type": "Boolean"
     }
   ]
 }

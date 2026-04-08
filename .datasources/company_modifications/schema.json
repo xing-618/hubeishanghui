@@ -3,11 +3,6 @@
   "title": "企业修改申请",
   "schemas": [
     {
-      "name": "modificationId",
-      "title": "修改ID",
-      "type": "String"
-    },
-    {
       "name": "userId",
       "title": "用户ID",
       "type": "String"
@@ -18,8 +13,31 @@
       "type": "String"
     },
     {
-      "name": "newIntroduction",
-      "title": "新的企业介绍",
+      "name": "company_name",
+      "title": "企业名称",
+      "type": "String"
+    },
+    {
+      "name": "logo",
+      "title": "企业Logo",
+      "type": "Image"
+    },
+    {
+      "name": "brief_introduction",
+      "title": "一句话介绍",
+      "type": "String"
+    },
+    {
+      "name": "category",
+      "title": "企业分类",
+      "type": "Array",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "detailed_introduction",
+      "title": "详细介绍",
       "type": "RichText"
     },
     {

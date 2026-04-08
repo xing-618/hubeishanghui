@@ -1,37 +1,35 @@
-{
-  "records": [
-    {
-      "_id": "banner_001",
-      "bannerId": "banner_001",
-      "image": "https://images.unsplash.com/photo-1567997060361-6453678588c5?w=1200",
-      "title": "商会简介",
-      "description": "了解商会的发展历程和服务宗旨",
-      "targetPageId": "chamber_introduction",
-      "order": 1,
-      "createdAt": 1704067200000,
-      "updatedAt": 1704067200000
-    },
-    {
-      "_id": "banner_002",
-      "bannerId": "banner_002",
-      "image": "https://images.unsplash.com/photo-1559136555-9303baea864d?w=1200",
-      "title": "会员风采",
-      "description": "展示优秀会员企业的风采",
-      "targetPageId": "member_showcase",
-      "order": 2,
-      "createdAt": 1704067200000,
-      "updatedAt": 1704067200000
-    },
-    {
-      "_id": "banner_003",
-      "bannerId": "banner_003",
-      "image": "https://images.unsplash.com/photo-1519641481655-27f0b0b9b463?w=1200",
-      "title": "商会活动",
-      "description": "近期商会活动和通知",
-      "targetPageId": "chamber_events",
-      "order": 3,
-      "createdAt": 1704067200000,
-      "updatedAt": 1704067200000
-    }
-  ]
-}
+[
+  {
+    "_id": "banner_001",
+    "image": "https://images.unsplash.com/photo-1567997060361-6453678588c5?w=1200",
+    "title": "商会简介",
+    "description": "了解商会的发展历程和服务宗旨",
+    "link": "/chamber-introduction",
+    "order": 1,
+    "status": true,
+    "createdAt": 1704067200000,
+    "updatedAt": 1704067200000
+  },
+  {
+    "_id": "banner_002",
+    "image": "https://images.unsplash.com/photo-1559136555-9303baea864d?w=1200",
+    "title": "会员风采",
+    "description": "展示优秀会员企业的风采",
+    "link": "/member-showcase",
+    "order": 2,
+    "status": true,
+    "createdAt": 1704067200000,
+    "updatedAt": 1704067200000
+  },
+  {
+    "_id": "banner_003",
+    "image": "https://images.unsplash.com/photo-1519641481655-27f0b0b9b463?w=1200",
+    "title": "商会活动",
+    "description": "近期商会活动和通知",
+    "link": "/chamber-events",
+    "order": 3,
+    "status": true,
+    "createdAt": 1704067200000,
+    "updatedAt": 1704067200000
+  }
+]

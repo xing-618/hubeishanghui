@@ -1,15 +1,71 @@
-{
-  "records": [
-    {
-      "_id": "modification_001",
-      "modificationId": "modification_001",
-      "userId": "user_001",
-      "companyId": "company_001",
-      "newIntroduction": "<p>辉煌建材有限公司成立于2010年，是一家专业从事高品质建材销售的知名企业。公司主要产品包括瓷砖、地板、涂料、卫浴等，为客户提供一站式建材采购服务。</p><p>我们拥有10年的行业经验，服务客户超过5000家，产品质量和服务口碑在行业内名列前茅。</p><p>2024年新增智能建材产品线，为客户提供更智能化的建材解决方案。</p>",
-      "status": "待审核",
-      "rejectReason": "",
-      "createdAt": 1704499200000,
-      "updatedAt": 1704499200000
-    }
-  ]
-}
+[
+  {
+    "_id": "modification_001",
+    "userId": "user_001",
+    "companyId": "company_001",
+    "company_name": "辉煌建材有限公司",
+    "logo": "https://example.com/logo-new001.jpg",
+    "brief_introduction": "专注高品质建材销售，服务超过5000家客户",
+    "category": [
+      "建材",
+      "装修",
+      "瓷砖"
+    ],
+    "detailed_introduction": "<p>辉煌建材有限公司成立于2010年，是一家专业从事高品质建材销售的知名企业。公司主要产品包括瓷砖、地板、涂料、卫浴等，为客户提供一站式建材采购服务。</p><p>我们拥有10年的行业经验，服务客户超过5000家，产品质量和服务口碑在行业内名列前茅。</p><p>2024年新增智能建材产品线，为客户提供更智能化的建材解决方案。</p>",
+    "status": "待审核",
+    "rejectReason": "",
+    "createdAt": 1704499200000,
+    "updatedAt": 1704499200000
+  },
+  {
+    "_id": "modification_002",
+    "userId": "user_003",
+    "companyId": "company_003",
+    "company_name": "金叶烟行",
+    "logo": "https://example.com/logo-new002.jpg",
+    "brief_introduction": "经营各类优质烟草产品，诚信服务15年",
+    "category": [
+      "烟行"
+    ],
+    "detailed_introduction": "<p>金叶烟行成立于2009年，是一家专业经营烟草产品的合法企业。我们经营各类优质烟草产品，包括知名品牌香烟、雪茄等。</p><p>我们始终坚持诚信经营，15年来从未出现过任何违规行为。我们拥有稳定的供货渠道，确保产品来源合法、品质可靠。</p><p>我们的服务理念是：以客户为中心，提供优质的产品和服务。欢迎广大客户前来选购。</p>",
+    "status": "已通过",
+    "rejectReason": "",
+    "createdAt": 1704585600000,
+    "updatedAt": 1704672000000
+  },
+  {
+    "_id": "modification_003",
+    "userId": "user_002",
+    "companyId": "company_002",
+    "company_name": "顺达建材供应链有限公司",
+    "logo": "https://example.com/logo-new003.jpg",
+    "brief_introduction": "专业的建材供应链服务提供商",
+    "category": [
+      "建材",
+      "供应链"
+    ],
+    "detailed_introduction": "<p>顺达建材供应链有限公司成立于2015年，是一家专业的建材供应链服务提供商。我们致力于为建材企业提供全方位的供应链解决方案。</p><p>我们的服务范围包括：建材采购、仓储管理、物流配送、质量检测等。我们拥有专业的团队和完善的管理体系，能够为客户提供高效、可靠的服务。</p><p>我们的目标是成为建材行业的领先供应链服务商，为行业发展贡献力量。</p>",
+    "status": "已拒绝",
+    "rejectReason": "企业介绍内容过于简单，缺乏具体业务数据和成功案例支撑，请补充详细资料后再提交申请",
+    "createdAt": 1704672000000,
+    "updatedAt": 1704672000000
+  },
+  {
+    "_id": "modification_004",
+    "userId": "user_001",
+    "companyId": "company_001",
+    "company_name": "辉煌建材有限公司",
+    "logo": "https://example.com/logo-new004.jpg",
+    "brief_introduction": "专注高品质建材销售，服务超过5000家客户，2025年新增智能建材产品线",
+    "category": [
+      "建材",
+      "装修",
+      "智能建材"
+    ],
+    "detailed_introduction": "<p>辉煌建材有限公司成立于2010年，是一家专业从事高品质建材销售的知名企业。公司主要产品包括瓷砖、地板、涂料、卫浴等，为客户提供一站式建材采购服务。</p><p>我们拥有10年的行业经验，服务客户超过5000家，产品质量和服务口碑在行业内名列前茅。</p><p>2024年新增智能建材产品线，为客户提供更智能化的建材解决方案。2025年将进一步扩大产品范围，涵盖智能家居相关建材。</p><p>我们的团队由50名专业员工组成，其中15人为行业资深专家。我们拥有3个大型仓储中心，覆盖华东、华南、华北三大区域。</p>",
+    "status": "待审核",
+    "rejectReason": "",
+    "createdAt": 1704758400000,
+    "updatedAt": 1704758400000
+  }
+]

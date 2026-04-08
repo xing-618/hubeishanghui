@@ -2,39 +2,73 @@
   "records": [
     {
       "_id": "user_001",
-      "userId": "user_001",
       "name": "张三",
       "nickName": "张老板",
       "avatarUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200",
       "phone": "13800138000",
+      "password": "password_hash_001",
       "isMember": true,
+      "companyId": "company_001",
+      "favorites": ["company_001", "company_002"],
       "isAdmin": false,
       "createdAt": 1704067200000,
       "updatedAt": 1704067200000
     },
     {
       "_id": "user_002",
-      "userId": "user_002",
       "name": "李四",
       "nickName": "李经理",
       "avatarUrl": "https://images.unsplash.com/photo-1517841905152-363d4f9759f5?w=200",
       "phone": "13900139000",
+      "password": "password_hash_002",
       "isMember": false,
+      "companyId": "",
+      "favorites": ["company_003"],
       "isAdmin": false,
       "createdAt": 1704153600000,
       "updatedAt": 1704153600000
     },
     {
       "_id": "admin_001",
-      "userId": "admin_001",
       "name": "管理员",
       "nickName": "商会管理",
       "avatarUrl": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200",
       "phone": "15000150000",
+      "password": "password_hash_admin",
       "isMember": true,
+      "companyId": "",
+      "favorites": [],
       "isAdmin": true,
       "createdAt": 1704067200000,
       "updatedAt": 1704067200000
+    },
+    {
+      "_id": "user_003",
+      "name": "王五",
+      "nickName": "王总",
+      "avatarUrl": "https://images.unsplash.com/photo-1500648767791-00e99a43f0c3?w=200",
+      "phone": "13700137000",
+      "password": "password_hash_003",
+      "isMember": true,
+      "companyId": "company_003",
+      "favorites": ["company_001", "company_003", "company_004"],
+      "isAdmin": false,
+      "createdAt": 1704240000000,
+      "updatedAt": 1704240000000
+    },
+    {
+      "_id": "user_004",
+      "name": "赵六",
+      "nickName": "赵工",
+      "avatarUrl": "https://images.unsplash.com/photo-1492562080023-ab3e95260c44?w=200",
+      "phone": "13600136000",
+      "password": "password_hash_004",
+      "isMember": false,
+      "companyId": "",
+      "favorites": ["company_002"],
+      "isAdmin": false,
+      "createdAt": 1704326400000,
+      "updatedAt": 1704326400000
     }
   ]
 }
