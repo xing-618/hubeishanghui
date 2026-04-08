@@ -142,9 +142,10 @@ export default function RegisterPage(props) {
           });
         }, 1500);
       } else {
+        console.error('注册返回结果:', registerResult);
         toast({
           title: '注册失败',
-          description: '注册失败，请稍后重试',
+          description: registerResult?.error || '注册失败，请稍后重试',
           variant: 'destructive'
         });
       }

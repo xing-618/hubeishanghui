@@ -31,5 +31,104 @@
     "status": true,
     "createdAt": 1704067200000,
     "updatedAt": 1704067200000
+  },
+  {
+    "_id": "banner_004",
+    "image": "https://images.unsplash.com/photo-1497215827241-093531dd8847?w=1200",
+    "title": "建材推荐",
+    "description": "优质建材供应商推荐",
+    "link": "/companies?category=建材",
+    "order": 4,
+    "status": true,
+    "createdAt": 1704153600000,
+    "updatedAt": 1704153600000
+  },
+  {
+    "_id": "banner_005",
+    "image": "https://images.unsplash.com/photo-1581093458764-4c6592199bb0?w=1200",
+    "title": "装修服务",
+    "description": "专业装修设计服务",
+    "link": "/companies?category=装修",
+    "order": 5,
+    "status": true,
+    "createdAt": 1704240000000,
+    "updatedAt": 1704240000000
+  },
+  {
+    "_id": "banner_006",
+    "image": "https://images.unsplash.com/photo-1559526323-4b5b0e0e0c9a?w=1200",
+    "title": "烟酒专卖",
+    "description": "正品烟酒，品质保证",
+    "link": "/companies?category=烟行",
+    "order": 6,
+    "status": true,
+    "createdAt": 1704326400000,
+    "updatedAt": 1704326400000
+  },
+  {
+    "_id": "banner_007",
+    "image": "https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?w=1200",
+    "title": "会员招募",
+    "description": "加入商会，共创辉煌",
+    "link": "/member-certification",
+    "order": 7,
+    "status": true,
+    "createdAt": 1704412800000,
+    "updatedAt": 1704412800000
+  },
+  {
+    "_id": "banner_008",
+    "image": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200",
+    "title": "设计服务",
+    "description": "专业室内设计",
+    "link": "/companies?category=设计",
+    "order": 8,
+    "status": true,
+    "createdAt": 1704499200000,
+    "updatedAt": 1704499200000
+  },
+  {
+    "_id": "banner_009",
+    "image": "https://images.unsplash.com/photo-1460925895917-1d1b7448b854?w=1200",
+    "title": "政策解读",
+    "description": "最新行业政策解读和指导",
+    "link": "/policy-news",
+    "order": 9,
+    "status": true,
+    "createdAt": 1704585600000,
+    "updatedAt": 1704585600000
+  },
+  {
+    "_id": "banner_010",
+    "image": "https://images.unsplash.com/photo-1556761175-6b0a57a8a0c4?w=1200",
+    "title": "合作交流",
+    "description": "促进会员企业间合作交流",
+    "link": "/cooperation",
+    "order": 10,
+    "status": true,
+    "createdAt": 1704672000000,
+    "updatedAt": 1704672000000
+  },
+  {
+    "_id": "banner_011",
+    "image": "https://images.unsplash.com/photo-1573164713714-d8e436ab6f14?w=1200",
+    "title": "培训课程",
+    "description": "行业技能培训和提升",
+    "link": "/training",
+    "order": 11,
+    "status": true,
+    "createdAt": 1704758400000,
+    "updatedAt": 1704758400000
+  },
+  {
+    "_id": "banner_012",
+    "image": "https://images.unsplash.com/photo-1544256558-7497c7d98f48?w=1200",
+    "title": "配送服务",
+    "description": "高效配送服务网络",
+    "link": "/companies?category=配送",
+    "order": 12,
+    "status": true,
+    "createdAt": 1704844800000,
+    "updatedAt": 1704844800000
   }
 ]

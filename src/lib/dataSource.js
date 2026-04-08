@@ -12,7 +12,7 @@
  */
 export async function callDataSource({ dataSourceName, params }) {
   try {
-    const tcb = await window.$cloud;
+    const tcb = await window.$w?.cloud?.getCloudInstance();
     if (!tcb) {
       throw new Error('云开发实例未初始化');
     }

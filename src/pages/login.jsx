@@ -88,6 +88,7 @@ export default function LoginPage(props) {
             });
           }, 1000);
         } else {
+          console.error('密码验证失败: 用户密码=', user.password, '输入密码=', formData.password);
           toast({
             title: '登录失败',
             description: '手机号或密码错误',
