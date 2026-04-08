@@ -1,7 +1,7 @@
 // @ts-ignore;
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // @ts-ignore;
-import { Building2, ArrowRight } from 'lucide-react';
+import { Building2, ArrowRight, CheckCircle } from 'lucide-react';
 // @ts-ignore;
 import { useToast } from '@/components/ui';
 
@@ -36,6 +36,46 @@ export default function LoginPage(props) {
       setIsLoading(false);
     }
   };
+  useEffect(() => {
+    // 检查是否刚登录成功
+    const checkLoginSuccess = async () => {
+      const currentUser = $w.auth.currentUser;
+      if (currentUser && currentUser.userId) {
+        try {
+          // 调用微信鉴权云函数记录用户信息
+          const tcb = await $w.cloud.getCloudInstance();
+          const result = await tcb.callFunction({
+            name: 'wechat-auth',
+            data: {
+              userIdentifier: currentUser.userId,
+              phoneNumber: currentUser.phoneNumber || '',
+              // 微信登录时可能没有手机号
+              userInfo: {
+                nickName: currentUser.nickName || '',
+                avatarUrl: currentUser.avatarUrl || '',
+                name: currentUser.name || ''
+              }
+            }
+          });
+          if (result && result.result && result.result.authStatus) {
+            // 登录成功，跳转到首页
+            $w.utils.navigateTo({
+              pageId: 'home',
+              params: {}
+            });
+          }
+        } catch (error) {
+          console.error('记录用户信息失败:', error);
+          // 即使记录失败也跳转到首页
+          $w.utils.navigateTo({
+            pageId: 'home',
+            params: {}
+          });
+        }
+      }
+    };
+    checkLoginSuccess();
+  }, [$w.auth.currentUser, $w.cloud, $w.utils]);
   return <div className="min-h-screen bg-gradient-to-br from-[#2D3748] via-[#4A5568] to-[#2D3748] flex items-center justify-center relative overflow-hidden">
       {/* 背景装饰 */}
       <div className="absolute inset-0">

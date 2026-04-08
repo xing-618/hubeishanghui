@@ -6,6 +6,23 @@ import { ArrowLeft, Heart, Trash2 } from 'lucide-react';
 import { Button, useToast } from '@/components/ui';
 
 import { callDataSource } from '@/lib/dataSource';
+
+/**
+ * 调用收藏云函数
+ * @param action 操作类型：'add'=新增收藏、'remove'=取消收藏、'list'=查询列表
+ * @param params 参数对象
+ * @returns 云函数返回结果
+ */
+async function callFavoritesCloudFunction(action, params) {
+  const tcb = await window.$w.cloud.getCloudInstance();
+  return await tcb.callFunction({
+    name: 'favorites',
+    data: {
+      action,
+      ...params
+    }
+  });
+}
 export default function Favorites(props) {
   const {
     toast
@@ -28,21 +45,18 @@ export default function Favorites(props) {
   const fetchFavorites = async () => {
     try {
       setLoading(true);
-      const result = await callDataSource({
-        dataSourceName: 'favorites',
-        params: {
-          operation: 'list',
-          condition: {
-            userId: currentUser.userId
-          }
-        }
+      const result = await callFavoritesCloudFunction('list', {
+        userId: currentUser.userId
       });
-      if (result && result.data) {
-        setFavorites(result.data);
-        if (result.data.length > 0) {
-          const companyIds = result.data.map(fav => fav.companyId);
+      if (result && result.result && result.result.success) {
+        const favoritesData = result.result.favorites || [];
+        setFavorites(favoritesData);
+        if (favoritesData.length > 0) {
+          const companyIds = favoritesData.map(fav => fav.companyId);
           await fetchCompanies(companyIds);
         }
+      } else {
+        throw new Error(result?.result?.message || '获取收藏列表失败');
       }
     } catch (error) {
       console.error('获取收藏列表失败:', error);
@@ -71,7 +85,7 @@ export default function Favorites(props) {
       console.error('获取企业信息失败:', error);
     }
   };
-  const handleRemoveFavorite = async (favoriteId, e) => {
+  const handleRemoveFavorite = async (companyId, favoriteId, e) => {
     e.stopPropagation();
     if (deleteLoading) return;
     if (!window.confirm('确定要取消收藏这个企业吗？')) {
@@ -79,27 +93,21 @@ export default function Favorites(props) {
     }
     try {
       setDeleteLoading(favoriteId);
-      const result = await callDataSource({
-        dataSourceName: 'favorites',
-        params: {
-          operation: 'delete',
-          condition: {
-            favoriteId: favoriteId
-          }
-        }
+      const result = await callFavoritesCloudFunction('remove', {
+        userId: currentUser.userId,
+        companyId: companyId
       });
-      if (result && result.success) {
+      if (result && result.result && result.result.success) {
         toast({
           title: '已取消收藏',
           description: '该企业已从收藏中移除'
         });
-        setFavorites(favorites.filter(fav => fav.favoriteId !== favoriteId));
-        const companyIds = favorites.filter(fav => fav.favoriteId !== favoriteId).map(fav => fav.companyId);
-        setCompanies(companies.filter(company => companyIds.includes(company.companyId)));
+        setFavorites(favorites.filter(fav => fav.companyId !== companyId));
+        setCompanies(companies.filter(company => company.companyId !== companyId));
       } else {
         toast({
           title: '操作失败',
-          description: '取消收藏失败，请稍后重试',
+          description: result?.result?.message || '取消收藏失败，请稍后重试',
           variant: 'destructive'
         });
       }
@@ -194,7 +202,7 @@ export default function Favorites(props) {
                         </p>}
                     </div>
                     
-                    <Button onClick={e => handleRemoveFavorite(favorite.favoriteId, e)} disabled={deleteLoading === favorite.favoriteId} variant="ghost" size="icon" className="text-gray-400 hover:text-red-500 hover:bg-red-50 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0">
+                    <Button onClick={e => handleRemoveFavorite(company.companyId, favorite.favoriteId, e)} disabled={deleteLoading === favorite.favoriteId} variant="ghost" size="icon" className="text-gray-400 hover:text-red-500 hover:bg-red-50 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0">
                       <Trash2 className="w-4 h-4" />
                     </Button>
                   </div>

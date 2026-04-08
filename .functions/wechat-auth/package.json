@@ -1,0 +1,9 @@
+{
+  "name": "wechat-auth",
+  "version": "1.0.0",
+  "description": "微信鉴权和用户登录功能",
+  "main": "index.js",
+  "dependencies": {
+    "@cloudbase/node-sdk": "^3.3.7"
+  }
+}

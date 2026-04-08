@@ -1,0 +1,9 @@
+{
+  "name": "member-application",
+  "version": "1.0.0",
+  "description": "会员认证申请云函数",
+  "main": "index.js",
+  "dependencies": {
+    "@cloudbase/node-sdk": "^3.3.7"
+  }
+}

@@ -6,6 +6,23 @@ import { ArrowLeft, Upload, FileText, Image as ImageIcon, CheckCircle } from 'lu
 import { Button, Input, Textarea, useToast } from '@/components/ui';
 
 import { callDataSource } from '@/lib/dataSource';
+
+/**
+ * 调用会员申请云函数
+ * @param action 操作类型：'submit'=提交申请、'list'=查询列表、'detail'=查询详情、'review'=审核
+ * @param data 参数对象
+ * @returns 云函数返回结果
+ */
+async function callMemberApplicationCloudFunction(action, data) {
+  const tcb = await window.$w.cloud.getCloudInstance();
+  return await tcb.callFunction({
+    name: 'member-application',
+    data: {
+      action,
+      data
+    }
+  });
+}
 export default function MemberCertification(props) {
   const {
     toast
@@ -48,19 +65,18 @@ export default function MemberCertification(props) {
   };
   const checkExistingApplication = async () => {
     try {
-      const result = await callDataSource({
-        dataSourceName: 'member_applications',
-        params: {
-          operation: 'list',
-          condition: {
-            userId: currentUser.userId
-          }
-        }
+      const result = await callMemberApplicationCloudFunction('list', {
+        applicantId: currentUser.userId
       });
-      if (result && result.data && result.data.length > 0) {
-        const pendingApplication = result.data.find(app => app.status === '待审核');
+      if (result && result.result && result.result.success) {
+        const applications = result.result.applications || [];
+        const pendingApplication = applications.find(app => app.applicationStatus === 'pending');
         if (pendingApplication) {
-          setExistingApplication(pendingApplication);
+          setExistingApplication({
+            applicationId: pendingApplication.applicationId,
+            status: pendingApplication.applicationStatus === 'pending' ? '待审核' : pendingApplication.applicationStatus === 'approved' ? '已通过' : '已拒绝',
+            rejectReason: pendingApplication.reviewComment || ''
+          });
         }
       }
     } catch (error) {
@@ -100,32 +116,27 @@ export default function MemberCertification(props) {
     }
     setLoading(true);
     try {
-      const result = await callDataSource({
-        dataSourceName: 'member_applications',
-        params: {
-          operation: 'add',
-          data: {
-            applicationId: `app_${Date.now()}`,
-            userId: currentUser.userId,
-            companyName: formData.companyName,
-            certificate: formData.certificate,
-            logo: formData.logo,
-            status: '待审核'
-          }
-        }
+      const result = await callMemberApplicationCloudFunction('submit', {
+        applicantId: currentUser.userId,
+        applicantName: user?.name || '',
+        applicantPhone: user?.phone || '',
+        applicantCompany: formData.companyName,
+        applicationReason: '申请成为会员企业',
+        proofMaterials: formData.certificate ? [formData.certificate] : []
       });
-      if (result && result.success) {
+      if (result && result.result && result.result.success) {
         toast({
           title: '申请提交成功',
           description: '您的会员认证申请已提交，等待管理员审核'
         });
         setExistingApplication({
+          applicationId: result.result.application.applicationId,
           status: '待审核'
         });
       } else {
         toast({
           title: '提交失败',
-          description: '认证申请提交失败，请稍后重试',
+          description: result?.result?.message || '认证申请提交失败，请稍后重试',
           variant: 'destructive'
         });
       }
