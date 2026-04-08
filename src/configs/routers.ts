@@ -7,6 +7,11 @@ import EDIT_PROFILE from '../pages/edit-profile.jsx';
 import FAVORITES from '../pages/favorites.jsx';
 import MEMBER_CERTIFICATION from '../pages/member-certification.jsx';
 import MY_COMPANY from '../pages/my-company.jsx';
+import ADMIN_DASHBOARD from '../pages/admin-dashboard.jsx';
+import ADMIN_USERS from '../pages/admin-users.jsx';
+import ADMIN_MEMBER-CERTIFICATIONS from '../pages/admin-member-certifications.jsx';
+import ADMIN_COMPANIES from '../pages/admin-companies.jsx';
+import ADMIN_COMPANY-AUDITS from '../pages/admin-company-audits.jsx';
 export const routers = [{
   id: "login",
   component: LOGIN
@@ -34,4 +39,19 @@ export const routers = [{
 }, {
   id: "my-company",
   component: MY_COMPANY
+}, {
+  id: "admin-dashboard",
+  component: ADMIN_DASHBOARD
+}, {
+  id: "admin-users",
+  component: ADMIN_USERS
+}, {
+  id: "admin-member-certifications",
+  component: ADMIN_MEMBER-CERTIFICATIONS
+}, {
+  id: "admin-companies",
+  component: ADMIN_COMPANIES
+}, {
+  id: "admin-company-audits",
+  component: ADMIN_COMPANY-AUDITS
 }]

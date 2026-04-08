@@ -233,7 +233,7 @@ export default function MyCompany(props) {
         </div>
       </div>;
   }
-  if (!user.isMember) {
+  if (!user || !user.isMember) {
     return <div className="flex items-center justify-center min-h-screen bg-gray-50">
         <div className="text-center">
           <AlertCircle className="w-16 h-16 text-[#F59E0B] mx-auto mb-4" />
