@@ -12,6 +12,7 @@ import ADMIN_USERS from '../pages/admin-users.jsx';
 import ADMIN_MEMBER-CERTIFICATIONS from '../pages/admin-member-certifications.jsx';
 import ADMIN_COMPANIES from '../pages/admin-companies.jsx';
 import ADMIN_COMPANY-AUDITS from '../pages/admin-company-audits.jsx';
+import REGISTER from '../pages/register.jsx';
 export const routers = [{
   id: "login",
   component: LOGIN
@@ -54,4 +55,7 @@ export const routers = [{
 }, {
   id: "admin-company-audits",
   component: ADMIN_COMPANY-AUDITS
+}, {
+  id: "register",
+  component: REGISTER
 }]
