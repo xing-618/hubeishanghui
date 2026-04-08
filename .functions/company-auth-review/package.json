@@ -1,0 +1,9 @@
+{
+  "name": "company-auth-review",
+  "version": "1.0.0",
+  "description": "企业认证审核云函数",
+  "main": "index.js",
+  "dependencies": {
+    "@cloudbase/node-sdk": "^3.3.7"
+  }
+}

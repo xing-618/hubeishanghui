@@ -1,0 +1,9 @@
+{
+  "name": "company-info-review",
+  "version": "1.0.0",
+  "description": "企业信息审核云函数",
+  "main": "index.js",
+  "dependencies": {
+    "@cloudbase/node-sdk": "^3.3.7"
+  }
+}
