@@ -48,18 +48,23 @@ export async function callDataSource({ dataSourceName, params }) {
 
       case 'add':
         // 添加记录
-        const addResult = await collection.add({
+        // 先准备数据，然后添加，最后设置 userId
+        const addData = {
           ...data,
-          userId: data.userId || addResult.id, // 使用传入的userId或生成的_id作为userId
           createdAt: new Date(),
           updatedAt: new Date()
-        });
+        };
+        // 如果没有传入 userId，会在 add 成功后使用返回的 _id
+        const addResult = await collection.add(addData);
+        
         result = {
           success: true,
           data: {
             ...data,
-            userId: data.userId || addResult.id,
-            _id: addResult.id
+            userId: data.userId || addResult.id, // 使用传入的userId或生成的_id作为userId
+            _id: addResult.id,
+            createdAt: new Date(),
+            updatedAt: new Date()
           }
         };
         break;

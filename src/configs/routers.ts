@@ -13,6 +13,8 @@ import ADMIN_MEMBER-CERTIFICATIONS from '../pages/admin-member-certifications.js
 import ADMIN_COMPANIES from '../pages/admin-companies.jsx';
 import ADMIN_COMPANY-AUDITS from '../pages/admin-company-audits.jsx';
 import REGISTER from '../pages/register.jsx';
+import INIT_DATA from '../pages/init-data.jsx';
+import TEST_LOGIN from '../pages/test-login.jsx';
 export const routers = [{
   id: "login",
   component: LOGIN
@@ -58,4 +60,10 @@ export const routers = [{
 }, {
   id: "register",
   component: REGISTER
+}, {
+  id: "init-data",
+  component: INIT_DATA
+}, {
+  id: "test-login",
+  component: TEST_LOGIN
 }]

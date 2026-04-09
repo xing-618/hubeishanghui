@@ -5,7 +5,6 @@ import { ArrowLeft, Building2, User, Lock, Eye, EyeOff } from 'lucide-react';
 // @ts-ignore;
 import { Button, Input, useToast } from '@/components/ui';
 
-import { callDataSource } from '@/lib/dataSource';
 export default function RegisterPage(props) {
   const {
     className,
@@ -90,16 +89,26 @@ export default function RegisterPage(props) {
     setIsLoading(true);
     try {
       // 先检查手机号是否已注册
-      const existingUserResult = await callDataSource({
+      const existingUserResult = await $w.cloud.callDataSource({
         dataSourceName: 'users',
+        methodName: 'wedaGetRecordsV2',
         params: {
-          operation: 'list',
-          condition: {
-            phone: formData.phone
-          }
+          filter: {
+            where: {
+              phone: {
+                $eq: formData.phone
+              }
+            }
+          },
+          select: {
+            $master: true
+          },
+          pageSize: 1,
+          pageNumber: 1
         }
       });
-      if (existingUserResult && existingUserResult.data && existingUserResult.data.length > 0) {
+      console.log('检查手机号是否已注册:', existingUserResult);
+      if (existingUserResult.success && existingUserResult.data && existingUserResult.data.records && existingUserResult.data.records.length > 0) {
         toast({
           title: '注册失败',
           description: '该手机号已被注册，请直接登录',
@@ -112,10 +121,12 @@ export default function RegisterPage(props) {
       // 生成唯一 userId
       const userId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
       console.log('注册用户，生成 userId:', userId);
-      const registerResult = await callDataSource({
+
+      // 使用 wedaCreateRecordV2 创建记录
+      const registerResult = await $w.cloud.callDataSource({
         dataSourceName: 'users',
+        methodName: 'wedaCreateRecordV2',
         params: {
-          operation: 'add',
           data: {
             userId: userId,
             // 添加 userId 字段
@@ -133,9 +144,11 @@ export default function RegisterPage(props) {
           }
         }
       });
+      console.log('注册结果:', registerResult);
       if (registerResult && registerResult.success) {
         // 注册成功，使用生成的 userId
         console.log('注册成功，保存用户ID到 localStorage:', userId);
+        console.log('注册返回记录ID:', registerResult.data?.recordId);
         localStorage.setItem('currentUserId', userId);
         toast({
           title: '注册成功',
@@ -151,9 +164,10 @@ export default function RegisterPage(props) {
         }, 1500);
       } else {
         console.error('注册返回结果:', registerResult);
+        const errorMsg = registerResult?.error || registerResult?.message || '注册失败，请稍后重试';
         toast({
           title: '注册失败',
-          description: registerResult?.error || '注册失败，请稍后重试',
+          description: errorMsg,
           variant: 'destructive'
         });
       }
