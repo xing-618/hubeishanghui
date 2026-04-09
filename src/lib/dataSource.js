@@ -50,6 +50,7 @@ export async function callDataSource({ dataSourceName, params }) {
         // 添加记录
         const addResult = await collection.add({
           ...data,
+          userId: data.userId || addResult.id, // 使用传入的userId或生成的_id作为userId
           createdAt: new Date(),
           updatedAt: new Date()
         });
@@ -57,6 +58,7 @@ export async function callDataSource({ dataSourceName, params }) {
           success: true,
           data: {
             ...data,
+            userId: data.userId || addResult.id,
             _id: addResult.id
           }
         };

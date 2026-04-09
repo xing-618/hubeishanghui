@@ -37,15 +37,22 @@ export default function ProfilePage(props) {
       // 注意：这种方式需要知道当前用户的标识，可能需要在登录时保存 userId 到 localStorage
       const storedUserId = localStorage.getItem('currentUserId');
       if (storedUserId) {
+        // 兼容处理：查询 userId 或 _id 字段
         const result = await $w.cloud.callDataSource({
           dataSourceName: 'users',
           methodName: 'wedaGetRecordsV2',
           params: {
             filter: {
               where: {
-                userId: {
-                  $eq: storedUserId
-                }
+                $or: [{
+                  userId: {
+                    $eq: storedUserId
+                  }
+                }, {
+                  _id: {
+                    $eq: storedUserId
+                  }
+                }]
               }
             },
             select: {
@@ -57,8 +64,10 @@ export default function ProfilePage(props) {
         });
         console.log('从数据库查询用户结果:', result);
         if (result.success && result.data && result.data.records && result.data.records.length > 0) {
-          setCurrentUser(result.data.records[0]);
-          console.log('从数据库获取用户信息成功:', result.data.records[0]);
+          const userData = result.data.records[0];
+          console.log('从数据库获取用户信息成功:', userData);
+          console.log('用户数据 userId:', userData.userId, '_id:', userData._id);
+          setCurrentUser(userData);
         } else {
           console.log('数据库中未找到用户，清除本地存储');
           localStorage.removeItem('currentUserId');

@@ -84,6 +84,11 @@ export default function LoginPage(props) {
       if (result.success && result.data && result.data.records && result.data.records.length > 0) {
         const user = result.data.records[0];
         console.log('查询到用户:', user);
+
+        // 兼容处理：如果没有 userId 字段，使用 _id 作为 userId
+        const userId = user.userId || user._id;
+        console.log('使用 userId:', userId, '(来源:', user.userId ? 'userId字段' : '_id字段', ')');
+
         // 简单的密码验证（生产环境应该使用加密后的密码比较）
         if (user.password === formData.password) {
           toast({
@@ -92,8 +97,8 @@ export default function LoginPage(props) {
           });
 
           // 登录成功后保存 userId 到 localStorage，用于 profile 页面查询
-          localStorage.setItem('currentUserId', user.userId);
-          console.log('登录成功，保存用户ID到 localStorage:', user.userId);
+          localStorage.setItem('currentUserId', userId);
+          console.log('登录成功，保存用户ID到 localStorage:', userId);
 
           // 登录成功后跳转到首页
           setTimeout(() => {

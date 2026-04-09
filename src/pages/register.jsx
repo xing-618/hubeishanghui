@@ -109,11 +109,16 @@ export default function RegisterPage(props) {
       }
 
       // 创建新用户
+      // 生成唯一 userId
+      const userId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+      console.log('注册用户，生成 userId:', userId);
       const registerResult = await callDataSource({
         dataSourceName: 'users',
         params: {
           operation: 'add',
           data: {
+            userId: userId,
+            // 添加 userId 字段
             name: formData.name,
             phone: formData.phone,
             password: formData.password,
@@ -129,21 +134,9 @@ export default function RegisterPage(props) {
         }
       });
       if (registerResult && registerResult.success) {
-        // 注册成功，查询新用户信息获取userId
-        const newUserResult = await callDataSource({
-          dataSourceName: 'users',
-          params: {
-            operation: 'list',
-            condition: {
-              phone: formData.phone
-            }
-          }
-        });
-        if (newUserResult && newUserResult.data && newUserResult.data.length > 0) {
-          const userId = newUserResult.data[0].userId;
-          localStorage.setItem('currentUserId', userId);
-          console.log('注册成功，保存用户ID到 localStorage:', userId);
-        }
+        // 注册成功，使用生成的 userId
+        console.log('注册成功，保存用户ID到 localStorage:', userId);
+        localStorage.setItem('currentUserId', userId);
         toast({
           title: '注册成功',
           description: '账号注册成功，请登录使用'
