@@ -15,6 +15,7 @@ import ADMIN_COMPANY-AUDITS from '../pages/admin-company-audits.jsx';
 import REGISTER from '../pages/register.jsx';
 import INIT_DATA from '../pages/init-data.jsx';
 import TEST_LOGIN from '../pages/test-login.jsx';
+import TEST_PROFILE from '../pages/test-profile.jsx';
 export const routers = [{
   id: "login",
   component: LOGIN
@@ -66,4 +67,7 @@ export const routers = [{
 }, {
   id: "test-login",
   component: TEST_LOGIN
+}, {
+  id: "test-profile",
+  component: TEST_PROFILE
 }]
