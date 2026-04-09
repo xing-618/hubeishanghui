@@ -4,7 +4,7 @@
     "userId": "user_001",
     "companyId": "company_001",
     "company_name": "辉煌建材有限公司",
-    "logo": "https://example.com/logo-new001.jpg",
+    "logo": "https://images.unsplash.com/photo-1497215827241-093531dd8847?w=200",
     "brief_introduction": "专注高品质建材销售，服务超过5000家客户",
     "category": [
       "建材",
@@ -22,7 +22,7 @@
     "userId": "user_003",
     "companyId": "company_003",
     "company_name": "金叶烟行",
-    "logo": "https://example.com/logo-new002.jpg",
+    "logo": "https://images.unsplash.com/photo-1559526323-4b5b0e0e0c9a?w=200",
     "brief_introduction": "经营各类优质烟草产品，诚信服务15年",
     "category": [
       "烟行"
@@ -38,7 +38,7 @@
     "userId": "user_002",
     "companyId": "company_002",
     "company_name": "顺达建材供应链有限公司",
-    "logo": "https://example.com/logo-new003.jpg",
+    "logo": "https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?w=200",
     "brief_introduction": "专业的建材供应链服务提供商",
     "category": [
       "建材",
@@ -55,7 +55,7 @@
     "userId": "user_001",
     "companyId": "company_001",
     "company_name": "辉煌建材有限公司",
-    "logo": "https://example.com/logo-new004.jpg",
+    "logo": "https://images.unsplash.com/photo-1497215827241-093531dd8847?w=200",
     "brief_introduction": "专注高品质建材销售，服务超过5000家客户，2025年新增智能建材产品线",
     "category": [
       "建材",
@@ -67,5 +67,113 @@
     "rejectReason": "",
     "createdAt": 1704758400000,
     "updatedAt": 1704758400000
+  },
+  {
+    "_id": "modification_005",
+    "userId": "user_006",
+    "companyId": "company_002",
+    "company_name": "精工装修装饰公司",
+    "logo": "https://images.unsplash.com/photo-1581093458764-4c6592199bb0?w=200",
+    "brief_introduction": "15年装修经验，设计施工一体化服务，已完成2000+项目",
+    "category": [
+      "装修",
+      "设计",
+      "工装"
+    ],
+    "detailed_introduction": "<p>精工装修装饰公司是一家拥有15年经验的装修设计公司，提供室内设计、装修施工、材料配送等全方位服务。</p><p>我们的设计团队由业内顶尖设计师组成，已成功完成2000+装修项目，获得客户的一致好评。</p><p>2025年新增智能家居装修业务，为客户提供更智能化的居住体验。我们的工装团队具备国家一级施工资质，可承接各类商业空间装修项目。</p>",
+    "status": "待审核",
+    "rejectReason": "",
+    "createdAt": 1704844800000,
+    "updatedAt": 1704844800000
+  },
+  {
+    "_id": "modification_006",
+    "userId": "user_009",
+    "companyId": "company_005",
+    "company_name": "雅居装饰设计工作室",
+    "logo": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=200",
+    "brief_introduction": "现代简约风格设计，让家更温馨，服务客户1000+家",
+    "category": [
+      "装修",
+      "设计",
+      "家装"
+    ],
+    "detailed_introduction": "<p>雅居装饰设计工作室专注于现代简约风格室内设计，为家庭和企业提供个性化的装修设计方案。</p><p>我们的设计师团队具有丰富的创意和经验，善于将客户的梦想变成现实，打造舒适、美观、实用的空间。</p><p>已服务客户超过1000家，我们的作品多次获得行业设计奖项。2025年将推出环保装修材料定制服务。</p>",
+    "status": "已通过",
+    "rejectReason": "",
+    "createdAt": 1704931200000,
+    "updatedAt": 1705017600000
+  },
+  {
+    "_id": "modification_007",
+    "userId": "user_011",
+    "companyId": "company_008",
+    "company_name": "华艺装饰工程公司",
+    "logo": "https://images.unsplash.com/photo-1617360547704-3da60e00e3a0?w=200",
+    "brief_introduction": "一级施工资质，专业装修工程，承接大型商业项目",
+    "category": [
+      "装修",
+      "工装",
+      "施工"
+    ],
+    "detailed_introduction": "<p>华艺装饰工程公司是一家综合性的装修施工企业，具备国家一级施工资质，承接各类装修工程项目。</p><p>我们拥有专业的施工团队和严格的质量管理体系，确保每一个项目都能按时按质完成。</p><p>2025年将拓展至高端住宅装修领域，提供更全面的服务。我们的项目经理平均拥有10年以上行业经验。</p>",
+    "status": "待审核",
+    "rejectReason": "",
+    "createdAt": 1705017600000,
+    "updatedAt": 1705017600000
+  },
+  {
+    "_id": "modification_008",
+    "userId": "user_013",
+    "companyId": "company_006",
+    "company_name": "金叶烟酒连锁店",
+    "logo": "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=200",
+    "brief_introduction": "20家连锁门店，正品保证，服务周到，年营业额超千万",
+    "category": [
+      "烟行",
+      "连锁",
+      "零售"
+    ],
+    "detailed_introduction": "<p>金叶烟酒连锁店是本地知名的烟酒零售品牌，拥有20家连锁门店，遍布城市各个角落。</p><p>我们承诺100%正品保证，价格合理，服务周到，是您购买烟酒的首选之地。</p><p>2024年新增会员积分系统，为客户提供更多优惠。年营业额已超过千万元，是本地烟酒零售行业的领军企业。</p>",
+    "status": "已通过",
+    "rejectReason": "",
+    "createdAt": 1705104000000,
+    "updatedAt": 1705190400000
+  },
+  {
+    "_id": "modification_009",
+    "userId": "user_015",
+    "companyId": "company_012",
+    "company_name": "星辰装饰设计公司",
+    "logo": "https://images.unsplash.com/photo-1591170458668-e2837714c7fa?w=200",
+    "brief_introduction": "高端设计，匠心工艺，打造理想空间，获多项设计奖项",
+    "category": [
+      "装修",
+      "设计",
+      "高端"
+    ],
+    "detailed_introduction": "<p>星辰装饰设计公司专注于高端住宅和商业空间的装修设计，提供从概念设计到施工落地的全流程服务。</p><p>我们的设计团队具有国际视野，善于融合东西方设计理念，为客户打造独一无二的空间体验。</p><p>已获得多项国内外设计奖项，包括亚洲室内设计奖、中国室内设计大赛金奖等。我们的作品被知名设计杂志多次报道。</p>",
+    "status": "待审核",
+    "rejectReason": "",
+    "createdAt": 1705190400000,
+    "updatedAt": 1705190400000
+  },
+  {
+    "_id": "modification_010",
+    "userId": "user_007",
+    "companyId": "company_004",
+    "company_name": "华源建材批发市场",
+    "logo": "https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?w=200",
+    "brief_introduction": "大型建材批发市场，品种齐全，价格优惠，500+商户入驻",
+    "category": [
+      "建材",
+      "批发",
+      "市场"
+    ],
+    "detailed_introduction": "<p>华源建材批发市场是本地最大的建材批发中心，拥有超过500家商户入驻，经营各类建材产品。</p><p>我们提供从建筑基础材料到装饰材料的全方位供应，价格优惠，质量保证，是建筑商和装修公司的首选合作伙伴。</p><p>2025年将建设第二期工程，新增200个商户席位，引入更多国际建材品牌。我们的物流配送服务覆盖周边300公里范围。</p>",
+    "status": "已拒绝",
+    "rejectReason": "企业Logo模糊不清，请上传高清版本后重新提交申请",
+    "createdAt": 1705276800000,
+    "updatedAt": 1705276800000
   }
 ]

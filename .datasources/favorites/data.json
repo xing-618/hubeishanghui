@@ -13,6 +13,181 @@
       "userId": "user_002",
       "companyId": "company_002",
       "createdAt": 1704326400000
+    },
+    {
+      "_id": "favorite_003",
+      "favoriteId": "favorite_003",
+      "userId": "user_003",
+      "companyId": "company_001",
+      "createdAt": 1704412800000
+    },
+    {
+      "_id": "favorite_004",
+      "favoriteId": "favorite_004",
+      "userId": "user_003",
+      "companyId": "company_003",
+      "createdAt": 1704499200000
+    },
+    {
+      "_id": "favorite_005",
+      "favoriteId": "favorite_005",
+      "userId": "user_003",
+      "companyId": "company_004",
+      "createdAt": 1704585600000
+    },
+    {
+      "_id": "favorite_006",
+      "favoriteId": "favorite_006",
+      "userId": "user_004",
+      "companyId": "company_002",
+      "createdAt": 1704672000000
+    },
+    {
+      "_id": "favorite_007",
+      "favoriteId": "favorite_007",
+      "userId": "user_006",
+      "companyId": "company_001",
+      "createdAt": 1704758400000
+    },
+    {
+      "_id": "favorite_008",
+      "favoriteId": "favorite_008",
+      "userId": "user_006",
+      "companyId": "company_002",
+      "createdAt": 1704844800000
+    },
+    {
+      "_id": "favorite_009",
+      "favoriteId": "favorite_009",
+      "userId": "user_007",
+      "companyId": "company_003",
+      "createdAt": 1704931200000
+    },
+    {
+      "_id": "favorite_010",
+      "favoriteId": "favorite_010",
+      "userId": "user_007",
+      "companyId": "company_004",
+      "createdAt": 1705017600000
+    },
+    {
+      "_id": "favorite_011",
+      "favoriteId": "favorite_011",
+      "userId": "user_008",
+      "companyId": "company_001",
+      "createdAt": 1705104000000
+    },
+    {
+      "_id": "favorite_012",
+      "favoriteId": "favorite_012",
+      "userId": "user_009",
+      "companyId": "company_001",
+      "createdAt": 1705190400000
+    },
+    {
+      "_id": "favorite_013",
+      "favoriteId": "favorite_013",
+      "userId": "user_009",
+      "companyId": "company_002",
+      "createdAt": 1705276800000
+    },
+    {
+      "_id": "favorite_014",
+      "favoriteId": "favorite_014",
+      "userId": "user_009",
+      "companyId": "company_003",
+      "createdAt": 1705363200000
+    },
+    {
+      "_id": "favorite_015",
+      "favoriteId": "favorite_015",
+      "userId": "user_011",
+      "companyId": "company_003",
+      "createdAt": 1705449600000
+    },
+    {
+      "_id": "favorite_016",
+      "favoriteId": "favorite_016",
+      "userId": "user_011",
+      "companyId": "company_004",
+      "createdAt": 1705536000000
+    },
+    {
+      "_id": "favorite_017",
+      "favoriteId": "favorite_017",
+      "userId": "user_012",
+      "companyId": "company_002",
+      "createdAt": 1705622400000
+    },
+    {
+      "_id": "favorite_018",
+      "favoriteId": "favorite_018",
+      "userId": "user_012",
+      "companyId": "company_004",
+      "createdAt": 1705708800000
+    },
+    {
+      "_id": "favorite_019",
+      "favoriteId": "favorite_019",
+      "userId": "user_013",
+      "companyId": "company_001",
+      "createdAt": 1705795200000
+    },
+    {
+      "_id": "favorite_020",
+      "favoriteId": "favorite_020",
+      "userId": "user_013",
+      "companyId": "company_002",
+      "createdAt": 1705881600000
+    },
+    {
+      "_id": "favorite_021",
+      "favoriteId": "favorite_021",
+      "userId": "user_015",
+      "companyId": "company_003",
+      "createdAt": 1705968000000
+    },
+    {
+      "_id": "favorite_022",
+      "favoriteId": "favorite_022",
+      "userId": "user_015",
+      "companyId": "company_004",
+      "createdAt": 1706054400000
+    },
+    {
+      "_id": "favorite_023",
+      "favoriteId": "favorite_023",
+      "userId": "user_016",
+      "companyId": "company_001",
+      "createdAt": 1706140800000
+    },
+    {
+      "_id": "favorite_024",
+      "favoriteId": "favorite_024",
+      "userId": "user_017",
+      "companyId": "company_001",
+      "createdAt": 1706227200000
+    },
+    {
+      "_id": "favorite_025",
+      "favoriteId": "favorite_025",
+      "userId": "user_017",
+      "companyId": "company_002",
+      "createdAt": 1706313600000
+    },
+    {
+      "_id": "favorite_026",
+      "favoriteId": "favorite_026",
+      "userId": "user_018",
+      "companyId": "company_003",
+      "createdAt": 1706400000000
+    },
+    {
+      "_id": "favorite_027",
+      "favoriteId": "favorite_027",
+      "userId": "user_019",
+      "companyId": "company_003",
+      "createdAt": 1706486400000
     }
   ]
 }
