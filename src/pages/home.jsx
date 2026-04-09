@@ -36,7 +36,11 @@ export default function HomePage(props) {
         methodName: 'wedaGetRecordsV2',
         params: {
           filter: {
-            where: {}
+            where: {
+              status: {
+                $eq: true
+              }
+            }
           },
           orderBy: [{
             order: 'asc'
@@ -74,11 +78,21 @@ export default function HomePage(props) {
           pageNumber: 1
         }
       })]);
-      if (bannersResult.success) {
+      console.log('轮播图返回结果:', bannersResult);
+      console.log('推荐企业返回结果:', companiesResult);
+      if (bannersResult.success && bannersResult.data && bannersResult.data.records) {
+        console.log('设置轮播图数量:', bannersResult.data.records.length);
         setBanners(bannersResult.data.records);
+      } else {
+        console.error('轮播图数据获取失败:', bannersResult);
+        setBanners([]);
       }
-      if (companiesResult.success) {
+      if (companiesResult.success && companiesResult.data && companiesResult.data.records) {
+        console.log('设置推荐企业数量:', companiesResult.data.records.length);
         setRecommendedCompanies(companiesResult.data.records);
+      } else {
+        console.error('推荐企业数据获取失败:', companiesResult);
+        setRecommendedCompanies([]);
       }
     } catch (error) {
       toast({

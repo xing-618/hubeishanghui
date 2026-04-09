@@ -20,9 +20,49 @@ export default function ProfilePage(props) {
   }, []);
   const loadCurrentUser = async () => {
     try {
-      const user = await $w.auth.getUserInfo();
-      if (user && user.currentUser) {
-        setCurrentUser(user.currentUser);
+      // 先尝试从 auth 获取用户信息（微信登录场景）
+      let user;
+      try {
+        user = await $w.auth.getUserInfo();
+        if (user && user.currentUser) {
+          setCurrentUser(user.currentUser);
+          console.log('从 auth 获取用户信息成功:', user.currentUser);
+          return;
+        }
+      } catch (authError) {
+        console.log('auth 获取用户信息失败，尝试从数据库查询:', authError);
+      }
+
+      // 如果 auth 获取失败，尝试从数据库 users 表查询（手机号登录场景）
+      // 注意：这种方式需要知道当前用户的标识，可能需要在登录时保存 userId 到 localStorage
+      const storedUserId = localStorage.getItem('currentUserId');
+      if (storedUserId) {
+        const result = await $w.cloud.callDataSource({
+          dataSourceName: 'users',
+          methodName: 'wedaGetRecordsV2',
+          params: {
+            filter: {
+              where: {
+                userId: {
+                  $eq: storedUserId
+                }
+              }
+            },
+            select: {
+              $master: true
+            },
+            pageSize: 1,
+            pageNumber: 1
+          }
+        });
+        console.log('从数据库查询用户结果:', result);
+        if (result.success && result.data && result.data.records && result.data.records.length > 0) {
+          setCurrentUser(result.data.records[0]);
+          console.log('从数据库获取用户信息成功:', result.data.records[0]);
+        } else {
+          console.log('数据库中未找到用户，清除本地存储');
+          localStorage.removeItem('currentUserId');
+        }
       }
     } catch (error) {
       console.error('获取用户信息失败:', error);
@@ -32,6 +72,9 @@ export default function ProfilePage(props) {
   };
   const handleLogout = async () => {
     try {
+      // 清除本地存储的用户ID
+      localStorage.removeItem('currentUserId');
+      console.log('已清除本地存储的用户ID');
       const tcb = await $w.cloud.getCloudInstance();
       await tcb.auth().signOut();
       await tcb.auth().signInAnonymously();
@@ -39,6 +82,9 @@ export default function ProfilePage(props) {
         force: true
       });
       setCurrentUser(null);
+
+      // 刷新页面以清除状态
+      window.location.reload();
       toast({
         title: '退出成功',
         description: '已成功退出登录'

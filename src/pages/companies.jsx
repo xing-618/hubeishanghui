@@ -63,10 +63,16 @@ export default function CompaniesPage(props) {
           pageNumber: 1
         }
       });
-      if (result.success) {
+      console.log('企业列表返回结果:', result);
+      if (result.success && result.data && result.data.records) {
+        console.log('设置企业数量:', result.data.records.length);
         setCompanies(result.data.records);
+      } else {
+        console.error('企业数据获取失败:', result);
+        setCompanies([]);
       }
     } catch (error) {
+      console.error('加载企业异常:', error);
       toast({
         title: '加载企业失败',
         description: error.message || '请稍后重试',

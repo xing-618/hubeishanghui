@@ -62,23 +62,38 @@ export default function LoginPage(props) {
     }
     setIsLoading(true);
     try {
-      const result = await callDataSource({
+      const result = await $w.cloud.callDataSource({
         dataSourceName: 'users',
+        methodName: 'wedaGetRecordsV2',
         params: {
-          operation: 'list',
-          condition: {
-            phone: formData.phone
-          }
+          filter: {
+            where: {
+              phone: {
+                $eq: formData.phone
+              }
+            }
+          },
+          select: {
+            $master: true
+          },
+          pageSize: 1,
+          pageNumber: 1
         }
       });
-      if (result && result.data && result.data.length > 0) {
-        const user = result.data[0];
+      console.log('手机号登录查询结果:', result);
+      if (result.success && result.data && result.data.records && result.data.records.length > 0) {
+        const user = result.data.records[0];
+        console.log('查询到用户:', user);
         // 简单的密码验证（生产环境应该使用加密后的密码比较）
         if (user.password === formData.password) {
           toast({
             title: '登录成功',
             description: '欢迎回来！'
           });
+
+          // 登录成功后保存 userId 到 localStorage，用于 profile 页面查询
+          localStorage.setItem('currentUserId', user.userId);
+          console.log('登录成功，保存用户ID到 localStorage:', user.userId);
 
           // 登录成功后跳转到首页
           setTimeout(() => {
@@ -96,6 +111,7 @@ export default function LoginPage(props) {
           });
         }
       } else {
+        console.error('未找到该手机号的用户');
         toast({
           title: '登录失败',
           description: '手机号或密码错误',
@@ -135,6 +151,31 @@ export default function LoginPage(props) {
             }
           });
           if (result && result.result && result.result.authStatus) {
+            // 登录成功，查询用户信息并保存
+            const userResult = await $w.cloud.callDataSource({
+              dataSourceName: 'users',
+              methodName: 'wedaGetRecordsV2',
+              params: {
+                filter: {
+                  where: {
+                    userId: {
+                      $eq: currentUser.userId
+                    }
+                  }
+                },
+                select: {
+                  $master: true
+                },
+                pageSize: 1,
+                pageNumber: 1
+              }
+            });
+            if (userResult.success && userResult.data && userResult.data.records && userResult.data.records.length > 0) {
+              const userId = userResult.data.records[0].userId;
+              localStorage.setItem('currentUserId', userId);
+              console.log('微信登录成功，保存用户ID到 localStorage:', userId);
+            }
+
             // 登录成功，跳转到首页
             $w.utils.navigateTo({
               pageId: 'home',

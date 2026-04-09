@@ -129,6 +129,21 @@ export default function RegisterPage(props) {
         }
       });
       if (registerResult && registerResult.success) {
+        // 注册成功，查询新用户信息获取userId
+        const newUserResult = await callDataSource({
+          dataSourceName: 'users',
+          params: {
+            operation: 'list',
+            condition: {
+              phone: formData.phone
+            }
+          }
+        });
+        if (newUserResult && newUserResult.data && newUserResult.data.length > 0) {
+          const userId = newUserResult.data[0].userId;
+          localStorage.setItem('currentUserId', userId);
+          console.log('注册成功，保存用户ID到 localStorage:', userId);
+        }
         toast({
           title: '注册成功',
           description: '账号注册成功，请登录使用'
