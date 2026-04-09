@@ -16,6 +16,7 @@ import REGISTER from '../pages/register.jsx';
 import INIT_DATA from '../pages/init-data.jsx';
 import TEST_LOGIN from '../pages/test-login.jsx';
 import TEST_PROFILE from '../pages/test-profile.jsx';
+import DEBUG_LOGIN from '../pages/debug-login.jsx';
 export const routers = [{
   id: "login",
   component: LOGIN
@@ -70,4 +71,7 @@ export const routers = [{
 }, {
   id: "test-profile",
   component: TEST_PROFILE
+}, {
+  id: "debug-login",
+  component: DEBUG_LOGIN
 }]
